@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle & Save</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .bundle-option {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 15px;
+            border-radius: 10px;
+            background: #fff;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: all 0.3s ease-in-out;
+            text-align: left;
+            position: relative;
+        }
+
+        .option.popular {
+            border: 2px solid #ffcc00;
+        }
+
+        .option.selected {
+            background-color: #e6f7ff;
+            border-color: #007bff;
+        }
+
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .discount {
+            font-size: 14px;
+            color: #ff0000;
+        }
+
+        /* Initially Hide Size & Color Box */
+        .size-color {
+            width: 100%;
+            margin-top: 10px;
+            display: none;  /* Hide by default */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .size, .color {
+            width: 48%;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        select {
+            width: 100%;
+            padding: 6px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 12px;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+
+        .shipping {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #28a745;
+        }
+
+        .powered-by {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bundle & Save</h1>
+        <div class="bundle-option">
+            <div class="option">
+                <div class="option-header">
+                    <span>1 Pair</span>
+                    <span class="discount">50% OFF</span>
+                </div>
+                <span class="price">DKK 195.00</span> 
+                <div class="size-color">
+                    <div class="color">
+                        <label for="color1">Colour</label>
+                        <select id="color1">
+                            <option value="color1">#1</option>
+                            <option value="color2">#2</option>
+                        </select>
+                    </div>
+                    <div class="size">
+                        <label for="size1">Size</label>
+                        <select id="size1">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="option popular">
+                <div class="option-header">
+                    <span>2 Pair</span>
+                    <span class="discount">Most Popular 40% OFF</span>
+                </div>
+                <span class="price">DKK 345.00</span> 
+                <div class="size-color">
+                    <div class="color">
+                        <label for="color2">Colour</label>
+                        <select id="color2">
+                            <option value="color1">#1</option>
+                            <option value="color2">#2</option>
+                        </select>
+                    </div>
+                    <div class="size">
+                        <label for="size2">Size</label>
+                        <select id="size2">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="option">
+                <div class="option-header">
+                    <span>3 Pair</span>
+                    <span class="discount">60% OFF</span>
+                </div>
+                <span class="price">DKK 528.00</span> 
+                <div class="size-color">
+                    <div class="color">
+                        <label for="color3">Colour</label>
+                        <select id="color3">
+                            <option value="color1">#1</option>
+                            <option value="color2">#2</option>
+                        </select>
+                    </div>
+                    <div class="size">
+                        <label for="size3">Size</label>
+                        <select id="size3">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total">
+            <span>Total: DKK 0.00</span>
+        </div>
+        <button class="add-to-cart">+ Add to Cart</button>
+        <div class="shipping">
+            <span>Free 2 Day Shipping</span>
+        </div>
+        <div class="powered-by">
+            <span>Powered by Pumper</span>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.querySelector('.size-color').style.display = 'none';
+                });
+
+                option.classList.add('selected');
+                option.querySelector('.size-color').style.display = 'flex';
+
+                const price = option.querySelector('.price').innerText;
+                document.querySelector('.total span').innerText = `Total: ${price}`;
+            });
+        });
+    </script>
+</body>
+</html>
